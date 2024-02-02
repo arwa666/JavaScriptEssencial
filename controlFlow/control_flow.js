@@ -50,3 +50,24 @@ let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
 
 console.log("Authentication Status:", authenticationStatus);
+
+let user = "Employee";
+
+let result ="";
+
+switch(user){
+    case "Employee":
+        result = "You can access Dietary Services";
+        break;
+    case "Enrolled Member":
+        result = "You can access Dietry Services and interact with dietician";
+        break;
+    case "Subscriber":
+        result = "You are authorized to have partial access to facilitate Dietary Services";
+        break;
+    case "Non-Subscriber":
+        result = "You need to be at least subscriber to avail this facility";
+        break;
+}
+
+console.log("the result is " + result);
