@@ -12,9 +12,54 @@
     <input type="number" id="input1"><br><br>
     <label for="input2">Enter Number 2:</label>
     <input type="number" id="input2"><br><br>
+    <label for="input3">Enter Operation:</label>
+    <input type="text" id="input3"><br><br>
     <button onclick="performOperation()">Perform Operation</button>
     <p id="result"></p>
-    <script src="./debug_code.js"></script>
+    <script >
+        
+function performOperation() {
+// Get user input from input fields
+let num1 = parseInt(document.getElementById('input1').value);
+let num2 = parseInt(document.getElementById('input2').value);
+let op = document.getElementById('input3').value;
+// Check if inputs are valid numbers
+if (!isNaN(num1) && !isNaN(num2)) {
+// Perform the operation
+                let result = doOperation(num1, num2, op);
+
+                // Display the result
+                displayResult(result);
+            } else {
+                displayResult('Please enter valid numbers');
+            }
+        }
+
+        function doOperation(a, b,o) {
+            // Introduce a debugger statement to pause execution
+            debugger;
+
+            switch(o){
+                case '+': return a+b;
+                case '*':return a*b;
+                case '/': {
+                    if(b !== 0)
+                      return a/b;
+                    else {
+                        console.log('the numbers cant be divided');
+                        break;
+                    }
+                }
+            }
+        }
+
+        function displayResult(result) {
+            // Display the result in the paragraph element
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = `The result is: ${result}`;
+        }
+  
+    </script>
 </body>
 
 </html>
